@@ -1,8 +1,8 @@
-import css from "./Contacts.module.css";
+import css from "./Contact.module.css";
 import { FaUser, FaPhoneAlt } from 'react-icons/fa';
 
 import { useDispatch } from 'react-redux';
-import { deleteContact } from '../../redux/contactsSlice';
+import { deleteContact } from '../../redux/contactsOps';
 const Contact = ({ name, number, id}) => {
     const dispatch = useDispatch();
 
@@ -10,8 +10,8 @@ const Contact = ({ name, number, id}) => {
     return (
         <div className={css.contactContainer}>
             
-            <div><p className={css.contactInput}><FaUser />{name}</p>
-                <p className={css.contactInput}><FaPhoneAlt/>{ number}</p>
+            <div><p className={css.contactInput}><FaUser /> {name}</p>
+                <p className={css.contactInput}><FaPhoneAlt/> { number}</p>
             </div>
             <button className={css.btn} onClick={() => handleDelete(id)}>Delete</button>
         </div>
